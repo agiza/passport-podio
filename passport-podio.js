@@ -9,8 +9,8 @@ var util = require('util')
 /**
  * `Strategy` constructor.
  *
- * The Google authentication strategy authenticates requests by delegating to
- * Google using the OAuth 2.0 protocol.
+ * The Podio authentication strategy authenticates requests by delegating to
+ * Podio using the OAuth 2.0 protocol.
  *
  * Applications must supply a `verify` callback which accepts an `accessToken`,
  * `refreshToken` and service-specific `profile`, and then calls the `done`
@@ -18,16 +18,16 @@ var util = require('util')
  * credentials are not valid.  If an exception occured, `err` should be set.
  *
  * Options:
- *   - `clientID`      your Google application's client id
- *   - `clientSecret`  your Google application's client secret
- *   - `callbackURL`   URL to which Google will redirect the user after granting authorization
+ *   - `clientID`      your Podio application's client id
+ *   - `clientSecret`  your Podio application's client secret
+ *   - `callbackURL`   URL to which Podio will redirect the user after granting authorization
  *
  * Examples:
  *
- *     passport.use(new GoogleStrategy({
- *         clientID: '123-456-789',
+ *     passport.use(new PodioStrategy({
+ *         clientID: 'my-app',
  *         clientSecret: 'shhh-its-a-secret'
- *         callbackURL: 'https://www.example.net/auth/google/callback'
+ *         callbackURL: 'http://localhost:3000/auth/podio/callback'
  *       },
  *       function(accessToken, refreshToken, profile, done) {
  *         User.findOrCreate(..., function (err, user) {
@@ -44,7 +44,7 @@ function Strategy(options, verify) {
   options = options || {};
   options.authorizationURL = options.authorizationURL || 'https://podio.com/oauth/authorize';
   options.tokenURL = options.tokenURL || 'https://podio.com/oauth/token';
-  
+
   OAuth2Strategy.call(this, options, verify);
   this.name = 'podio';
 }
@@ -70,7 +70,7 @@ util.inherits(Strategy, OAuth2Strategy);
  * @api protected
  */
 Strategy.prototype.userProfile = function(accessToken, done) {
-  this._oauth2.get('https://api.podio.com:443/user/profile/', accessToken, function (err, body, res) {
+  this._oauth2.get('https://api.podio.com/user/profile/', accessToken, function (err, body, res) {
     if (err) { return done(new InternalOAuthError('failed to fetch user profile', err)); }
 
     try {
