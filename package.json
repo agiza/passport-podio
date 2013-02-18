@@ -1,0 +1,30 @@
+{
+    "name": "passport-podio",
+    "version": "0.1.0",
+    "main": "./passport-podio.js",
+    "description": "Podio (OAuth2) authentication strategies for Passport.",
+    "keywords": ["passport", "podio", "auth", "authn", "authentication", "identity"],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/appsattic/passport-podio.git"
+    },
+    "bugs": {
+        "url": "http://github.com/appsattic/passport-podio/issues"
+    },
+    "author": {
+        "name": "Andrew Chilton",
+        "email": "chilts@appsattic.com",
+        "url": "http://appsattic.com/"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/MIT" 
+        }
+    ],
+    "dependencies": {
+        "pkginfo": "0.2.x",
+        "passport-oauth": "~0.1.4"
+    },
+    "engines": { "node": ">= 0.4.0" }
+}
