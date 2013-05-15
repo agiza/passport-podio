@@ -6,20 +6,20 @@
     "keywords": ["passport", "podio", "auth", "authn", "authentication", "identity"],
     "repository": {
         "type": "git",
-        "url": "git://github.com/appsattic/passport-podio.git"
+        "url": "git://github.com/chilts/passport-podio.git"
     },
     "bugs": {
-        "url": "http://github.com/appsattic/passport-podio/issues"
+        "url": "http://github.com/chilts/passport-podio/issues"
     },
     "author": {
         "name": "Andrew Chilton",
-        "email": "chilts@appsattic.com",
-        "url": "http://appsattic.com/"
+        "email": "andychilton@gmail.com",
+        "url": "http://chilts.org/blog/"
     },
     "licenses": [
         {
             "type": "MIT",
-            "url": "http://www.opensource.org/licenses/MIT" 
+            "url": "http://chilts.mit-license.org/2012/"
         }
     ],
     "dependencies": {
